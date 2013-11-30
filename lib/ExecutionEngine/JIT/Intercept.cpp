@@ -52,6 +52,8 @@ static void runAtExitHandlers() {
 #include <sys/stat.h>
 #endif
 #include <fcntl.h>
+// needed for gcc 4.7
+#include <unistd.h>
 /* stat functions are redirecting to __xstat with a version number.  On x86-64 
  * linking with libc_nonshared.a and -Wl,--export-dynamic doesn't make 'stat' 
  * available as an exported symbol, so we have to add it explicitly.
